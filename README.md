@@ -1,10 +1,10 @@
-# blog-api-client
+# Blog API Client-side
 
-This is Frontend side of Blog app. Backend reference can be found in [This Repository](https://github.com/pbaki/blog-api)
+This is Frontend side of the Blog app. Backend reference can be found in [This Repository](https://github.com/pbaki/blog-api)
 
 ## Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+Below example shows simple installation process
 
 1. Clone the repo
    ```sh
