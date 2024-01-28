@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Mainpage() {
-  return <></>;
+  return <>Main page</>;
 }
 
 export default Mainpage;

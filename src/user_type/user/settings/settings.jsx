@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Settings() {
-  return <></>;
+  return <>Settings</>;
 }
 
 export default Settings;

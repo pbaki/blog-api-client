@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Login() {
-  return <></>;
+  return <>Login</>;
 }
 
 export default Login;

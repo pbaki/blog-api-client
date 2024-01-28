@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Blogpost() {
-  return <></>;
+  return <>Blogpost</>;
 }
 
 export default Blogpost;
