@@ -1,12 +1,21 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./nav.css";
 
 function Nav() {
   return (
     <div className="Navigation">
-      <div className="navHomepage">Homepage</div>
-      <div className="navPosts">Blog Posts</div>
-      <div className="navLogin">Login</div>
+      <Link className="navHomepage" to="/">
+        Homepage
+      </Link>
+
+      <Link className="navPosts" to="/blogposts">
+        Blogposts
+      </Link>
+
+      <Link className="navLogin" to="/login">
+        Login
+      </Link>
     </div>
   );
 }

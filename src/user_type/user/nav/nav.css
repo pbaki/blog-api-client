@@ -6,22 +6,32 @@
   color: white;
   gap: 60px;
   margin-right: 20px;
-  padding: 12px;
+  padding: 14px;
 }
 .Navigation .navHomepage,
 .Navigation .navPosts,
 .Navigation .navLogin {
+  all: unset;
+  text-transform: uppercase;
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
   background-color: #dc3545;
   transition: background-color 0.3s ease;
+  box-shadow: 0 3px 0 darkred;
+  position: relative;
 }
 .Navigation .navHomepage:hover,
 .Navigation .navPosts:hover,
 .Navigation .navLogin:hover {
   background-color: #ac1b2a;
 }
+.Navigation .navHomepage:active,
+.Navigation .navPosts:active,
+.Navigation .navLogin:active {
+  box-shadow: none;
+  top: 3px;
+}
 .Navigation .navLogin {
   margin-right: 30px;
-} /*# sourceMappingURL=nav.css.map */
+}/*# sourceMappingURL=nav.css.map */
