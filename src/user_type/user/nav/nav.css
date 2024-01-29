@@ -1,0 +1,27 @@
+.Navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  gap: 60px;
+  margin-right: 20px;
+  padding: 12px;
+}
+.Navigation .navHomepage,
+.Navigation .navPosts,
+.Navigation .navLogin {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #dc3545;
+  transition: background-color 0.3s ease;
+}
+.Navigation .navHomepage:hover,
+.Navigation .navPosts:hover,
+.Navigation .navLogin:hover {
+  background-color: #ac1b2a;
+}
+.Navigation .navLogin {
+  margin-right: 30px;
+} /*# sourceMappingURL=nav.css.map */
