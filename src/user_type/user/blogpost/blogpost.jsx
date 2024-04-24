@@ -75,6 +75,7 @@ function Postblogpost() {
     authors: "",
     body: "",
   });
+  const [serverResponse, setServerResponse] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -87,6 +88,15 @@ function Postblogpost() {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
+      setServerResponse(
+        data.success === true ? (
+          <p className="serverResponse">
+            {"Success - Created new post with titie: " + data.blogpost.title}
+          </p>
+        ) : (
+          <p className="serverResponse">{data.error}</p>
+        )
+      );
       console.log("Response:", data);
     } catch (error) {
       console.error("Error:", error);
@@ -99,30 +109,33 @@ function Postblogpost() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="title"
-        placeholder="Title"
-        value={formData.title}
-        onChange={handleInputChange}
-      />
-      <input
-        type="text"
-        name="author"
-        placeholder="Author"
-        value={formData.author}
-        onChange={handleInputChange}
-      />
-      <input
-        type="text"
-        name="body"
-        placeholder="Body"
-        value={formData.body}
-        onChange={handleInputChange}
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          placeholder="Title"
+          value={formData.title}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          name="authors"
+          placeholder="Authors"
+          value={formData.authors}
+          onChange={handleInputChange}
+        />
+        <input
+          type="text"
+          name="body"
+          placeholder="Body"
+          value={formData.body}
+          onChange={handleInputChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
+      {serverResponse && <div>Response: {serverResponse}</div>}
+    </div>
   );
 }
 
