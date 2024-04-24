@@ -4,6 +4,7 @@ function Blogpost() {
   return (
     <>
       <BlogpostList />
+      <Postblogpost />
     </>
   );
 }
@@ -32,6 +33,7 @@ function BlogpostList() {
     };
     fetchData();
   }, []);
+
   return (
     <div className="blogpostlist">
       {isLoading ? (
@@ -44,11 +46,17 @@ function BlogpostList() {
             return (
               <div className="singlepost" key={i}>
                 <div className="title">{e.title}</div>
-                <div className="authors">{e.authors.map((a) => a)}</div>
-                <div className="creationdate">{e.date}</div>
+                <div className="authors">
+                  Authors: {e.authors.map((a) => a)}
+                </div>
+                <div className="creationdate">
+                  Last modification Date: {e.date}
+                </div>
                 <div className="score">
-                  <div className="postupvotes">{e.meta.upvotes}</div>
-                  <div className="postdownvotes">{e.meta.downvotes}</div>
+                  <div className="postupvotes">Upvotes: {e.meta.upvotes}</div>
+                  <div className="postdownvotes">
+                    Downvotes: {e.meta.downvotes}
+                  </div>
                 </div>
               </div>
             );
@@ -60,4 +68,62 @@ function BlogpostList() {
     </div>
   );
 }
+
+function Postblogpost() {
+  const [formData, setFormData] = useState({
+    title: "",
+    authors: "",
+    body: "",
+  });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await fetch("https://blogapi22.adaptable.app/posts/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      console.log("Response:", data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="title"
+        placeholder="Title"
+        value={formData.title}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        name="author"
+        placeholder="Author"
+        value={formData.author}
+        onChange={handleInputChange}
+      />
+      <input
+        type="text"
+        name="body"
+        placeholder="Body"
+        value={formData.body}
+        onChange={handleInputChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
 export default Blogpost;
