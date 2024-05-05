@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./blogpost.css";
 
 function Blogpost() {
   return (
@@ -41,7 +42,7 @@ function BlogpostList() {
       ) : error ? (
         <div>Error: {error}</div>
       ) : data ? (
-        <div>
+        <div className="allPosts">
           {data.map((e, i) => {
             return (
               <div className="singlepost" key={i}>

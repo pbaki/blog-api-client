@@ -1,0 +1,19 @@
+.blogpostlist .allPosts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px;
+  flex: 1;
+}
+.blogpostlist .allPosts .singlepost {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px;
+  padding: 10px;
+}
+
+/* Error message */
+.error {
+  color: #f44336;
+  font-weight: bold;
+} /*# sourceMappingURL=blogpost.css.map */
