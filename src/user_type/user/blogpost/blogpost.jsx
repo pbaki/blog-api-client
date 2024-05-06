@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./blogpost.css";
+import moment from "moment";
 
 function Blogpost() {
   return (
@@ -51,7 +52,8 @@ function BlogpostList() {
                   Authors: {e.authors.map((a) => a)}
                 </div>
                 <div className="creationdate">
-                  Last modification Date: {e.date}
+                  Last modified:
+                  {" " + moment.utc(e.date).format("MM/DD/YYYY")}
                 </div>
                 <div className="score">
                   <div className="postupvotes">Upvotes: {e.meta.upvotes}</div>

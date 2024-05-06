@@ -5,12 +5,41 @@
     gap: 15px;
     margin: 15px;
     flex: 1;
+    justify-content: center;
 
     .singlepost {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
       flex: 1;
-      min-width: 200px;
-      padding: 10px;
+      min-width: 250px;
+      padding: 20px 40px;
+      padding-bottom: 35px;
       flex-grow: 0;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #525252;
+      opacity: 100%;
+      color: rgb(255, 255, 255);
+      font-size: 1.2rem;
+      &:hover {
+        opacity: 90%;
+        cursor: pointer;
+      }
+      &:active {
+        opacity: 100%;
+      }
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #e9e9e9;
+        flex: 1;
+      }
     }
   }
 }
