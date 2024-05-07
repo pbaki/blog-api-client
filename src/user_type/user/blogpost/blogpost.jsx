@@ -48,9 +48,7 @@ function BlogpostList() {
             return (
               <div className="singlepost" key={i}>
                 <div className="title">{e.title}</div>
-                <div className="authors">
-                  Authors: {e.authors.map((a) => a)}
-                </div>
+                <div className="authors">By: {e.authors.map((a) => a)}</div>
                 <div className="creationdate">
                   Last modified:
                   {" " + moment.utc(e.date).format("MM/DD/YYYY")}
@@ -128,8 +126,7 @@ function Postblogpost() {
           value={formData.authors}
           onChange={handleInputChange}
         />
-        <input
-          type="text"
+        <textarea
           name="body"
           placeholder="Body"
           value={formData.body}
