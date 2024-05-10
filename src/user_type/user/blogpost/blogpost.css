@@ -86,6 +86,20 @@ form button:hover {
   background-color: #0056b3;
 }
 
+.serverResponseGood {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 90%;
+}
+
+.serverResponseBad {
+  color: rgb(0, 209, 0);
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 90%;
+}
+
 .error {
   color: #f44336;
   font-weight: bold;

@@ -90,6 +90,19 @@ form {
     }
   }
 }
+//Response after creating post
+.serverResponseGood {
+  color: red;
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 90%;
+}
+.serverResponseBad {
+  color: rgb(0, 209, 0);
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 90%;
+}
 
 // Error message
 .error {

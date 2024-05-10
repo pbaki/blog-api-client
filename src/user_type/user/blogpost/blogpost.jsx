@@ -91,11 +91,11 @@ function Postblogpost() {
       const data = await response.json();
       setServerResponse(
         data.success === true ? (
-          <p className="serverResponse">
+          <p className="serverResponseBad">
             {"Success - Created new post with titie: " + data.blogpost.title}
           </p>
         ) : (
-          <p className="serverResponse">{data.error}</p>
+          <p className="serverResponseGood">Error: {data.error}</p>
         )
       );
       console.log("Response:", data);
@@ -134,7 +134,7 @@ function Postblogpost() {
         />
         <button type="submit">Submit</button>
       </form>
-      {serverResponse && <div>Response: {serverResponse}</div>}
+      {serverResponse && <div>{serverResponse}</div>}
     </div>
   );
 }
