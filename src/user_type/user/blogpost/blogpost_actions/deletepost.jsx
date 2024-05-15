@@ -23,7 +23,7 @@ export default function Deleteblogpostbutton({ title, ifdelete }) {
   }
   return (
     <button className="deletePostButton" onClick={deleteRequest}>
-      Delete
+      Del
     </button>
   );
 }

@@ -7,6 +7,7 @@
   justify-content: center;
 }
 .blogpostlist .allPosts .singlepost {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,4 +104,30 @@ form button:hover {
 .error {
   color: #f44336;
   font-weight: bold;
+}
+
+.deletePost {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+}
+.deletePost .deletePostButton {
+  all: unset;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #dc3545;
+  box-shadow: 0 3px 0 darkred;
+}
+.deletePost .deletePostButton:hover {
+  background-color: #ac1b2a;
+}
+.deletePost .deletePostButton:active {
+  background-color: #830000;
+  box-shadow: none;
+  top: 3px;
 }/*# sourceMappingURL=blogpost.css.map */
